@@ -8,5 +8,6 @@
 
     <modules>
         <module>sharing-state-using-spring</module>
+        <module>cucumber-3-datatables</module>
     </modules>
 </project>
