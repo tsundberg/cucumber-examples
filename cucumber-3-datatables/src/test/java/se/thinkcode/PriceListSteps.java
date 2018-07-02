@@ -18,14 +18,11 @@ public class PriceListSteps {
         this.priceList = priceList;
     }
 
-    @When("I order {int} {word} and {int} {word}")
-    public void i_order_coffee_and_donut(Integer numberOfFirstItems, String firstItem,
-                                         Integer numberOfSecondItems, String secondItem) {
-        int firstPrice = priceList.get(firstItem);
-        int secondPrice = priceList.get(secondItem);
+    @When("I order {int} {word}")
+    public void i_order(Integer numberOfFirstItems, String item) {
+        int firstPrice = priceList.get(item);
 
         totalSum += firstPrice * numberOfFirstItems;
-        totalSum += secondPrice * numberOfSecondItems;
     }
 
     @Then("should I pay {int}")

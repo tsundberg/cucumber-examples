@@ -27,13 +27,10 @@ public class InternationalPriceList {
         }
     }
 
-    @When("I buy {int} {word} and {int} {word}")
-    public void i_buy_coffee_and_donut(Integer numberOfFirstItems, String firstItem,
-                                       Integer numberOfSecondItems, String secondItem) {
-        Price firstPrice = priceList.get(firstItem);
-        calculate(numberOfFirstItems, firstPrice);
-        Price secondPrice = priceList.get(secondItem);
-        calculate(numberOfSecondItems, secondPrice);
+    @When("I buy {int} {word}")
+    public void i_buy(Integer numberOfItems, String item) {
+        Price price = priceList.get(item);
+        calculate(numberOfItems, price);
     }
 
     private void calculate(int numberOfItems, Price price) {
